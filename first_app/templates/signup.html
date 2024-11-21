@@ -14,7 +14,7 @@
     {% block body %}
     {% if messages %}
     {% for m in messages %}
-    <small {% if m.tags %} class="{{m.tags}}" {% endif %}>{{m}}</small>
+    <p class="bg-success p-3 text-white" {% if m.tags %} class="{{m.tags}}" {% endif %}>{{m}}</p>
     {% endfor %}
     {% endif %}
     {% load crispy_forms_tags %}
