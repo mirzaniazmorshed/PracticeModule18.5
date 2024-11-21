@@ -57,7 +57,7 @@ def profile(request):
     
 def user_logout(request):
     logout(request)
-    messages.success(request, "Logout successfully")
+    messages.success(request, "Logged out successfully")
     return redirect('login')
 
 @login_required
