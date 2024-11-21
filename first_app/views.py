@@ -33,6 +33,7 @@ def user_login(request):
                 user = authenticate(username = name, password = userpass) #check kortesi user database e ase kina
                 if user is not None:
                     login(request, user)
+                    messages.success(request, "Logged In Successfully")
                     return redirect('profile') #profile page e redirect korbe
         else:
             form = AuthenticationForm()
@@ -56,6 +57,7 @@ def profile(request):
     
 def user_logout(request):
     logout(request)
+    messages.success(request, "Logout successfully")
     return redirect('login')
 
 @login_required

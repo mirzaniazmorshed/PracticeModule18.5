@@ -2,7 +2,11 @@
 {% load crispy_forms_tags %}
 
 {% block body %}
-
+{% if messages %}
+    {% for m in messages %}
+    <p class="bg-success p-3 text-white">{{m}}</p>
+    {% endfor %}
+    {% endif %}
 <form method="post" style="width: 50%; margin: auto" novalidate>
     <h1> Login page </h1>
  {% csrf_token %}
